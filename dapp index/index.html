@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Main dApp</title>
+  <title>My dApp</title>
   <style>
     body { font-family: sans-serif; padding: 40px; }
     iframe { width: 100%; height: 600px; border: none; }
@@ -10,17 +10,16 @@
 </head>
 <body>
   <h1>Welcome to My dApp</h1>
-  <p>Phantom loads below using Element Mode</p>
+  <p>Phantom loads below in Element Mode inside an iframe:</p>
 
-  <!-- ✅ Change the src in Step 4 -->
   <iframe
-    src=""
+    src="https:https://github.com/tdoxeigo1/phantom-iframe-site"
     sandbox="allow-scripts allow-same-origin"
-    id="walletFrame"
+    width="100%"
+    height="600"
   ></iframe>
 
   <script>
-    // Listen for wallet public key from iframe
     window.addEventListener('message', (event) => {
       if (event.data?.type === 'phantom-connected') {
         console.log("✅ Wallet connected:", event.data.publicKey);
